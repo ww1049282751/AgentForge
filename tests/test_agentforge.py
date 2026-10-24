@@ -41,6 +41,8 @@ class Fixture(unittest.TestCase):
                 shutil.copytree(src, self.repo / name)
             else:
                 shutil.copy2(src, self.repo / name)
+        # Lifecycle fixtures keep their own versions as the authored skill evolves.
+        self.alter('0.1.0')
         self.project = self.base / '项目 with spaces'
         self.project.mkdir()
         self.home = self.base / 'fake home'

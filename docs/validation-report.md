@@ -44,4 +44,12 @@
 
 源码位于当前仓库的 codex/agentforge-mvp 分支。候选由 build 命令生成到忽略的 dist 目录；归档与摘要不上传。仓库 stable/preview 发布目录仍为空。首次公开推送和正式发布须分别审查授权；没有开启自动化任务。
 
-已实际安装到当前 AgentForge 项目的 `.agents/skills/af-product-intelligence/`，项目 pin 为 0.1.0。安装后的 check --locked 与 doctor 均无冲突、无待恢复事务，state/lock 一致。全局技能未改动。该本机安装、状态和备份均被 .gitignore 排除，不随源码提交。
+首次安装到当前 AgentForge 项目的 `.agents/skills/af-product-intelligence/` 时，项目 pin 为 0.1.0；该版本的安装后检查通过。2026-10-24 已通过既有事务更新到 skill / 内部 plugin 0.2.0 并更新项目 lock，保留恢复备份。七个实际安装文件与受控评估冻结快照的 SHA-256 全部一致。更新后的 check --locked 与 doctor 均无冲突、无待恢复事务，state 有效。全局技能未改动。该本机安装、状态和备份均被 .gitignore 排除，不随源码提交。
+
+## 0.2.0 定位反馈复核（2026-10-24）
+
+按用户反馈扩展产品探索、深度分析、竞品与专业视角研究、认知补齐、分轮澄清和丰富表达。runtime 仍为 0.1.0，未扩展。两个独立受控试跑及主代理复核见 [research-02 摘要](evidence/research02-summary.md)：两轮脚本输入中继续追问关键未知；离线报告展开不同机制、反对意见、建设性方向和定性图表，明确区分模拟专业视角与真人评审。
+
+本轮 validate 与 skill quick_validate 通过；完整运行时回归 45 项，44 通过、1 项因 Windows 文件符号链接权限跳过，见 [本轮测试日志](evidence/research02-runtime-tests.txt)。测试夹具固定历史起始版本，未修改运行时实现。Markdown 链接与场景结构另经 check_docs 检查。
+
+这些结果仅支持受控行为符合新增要求；报告曾中断并恢复，不代表稳定响应时延。尚无用户对新版真实收益的验收，也未验证在线竞品研究、真实专家意见、自动触发或原生插件加载。源码与项目安装均仅本地更新，未推送或发布。

@@ -1,12 +1,14 @@
 # AgentForge
 
-个人使用优先的 Agent 技能库。首个能力 **product-intelligence** 用于产品探索、机制比较、专家观点核查与验证实验设计。当前优先验证它能否改善真实产品判断。
+个人使用优先的 Agent 技能库。首个能力 **product-intelligence 0.2.0** 用于产品发散性调研、深入分析、竞品分析、专家视角评审和认知补齐；通过分轮澄清对齐方向，形成有证据、有建设性的新理解与方案。当前优先验证它能否改善真实产品判断。
 
 **当前阶段：真实任务效果验证。自建运行时冻结扩展，暂不推送或发布。** 已有安装、版本锁和恢复实现保留为备用，不作为本阶段验收中心。已有工程测试不证明技能价值；内部插件格式也不代表 Codex 原生插件已验证。
 
 先读 [当前路线](docs/implementation-plan.md) 与 [真实任务评估方法](docs/skill-evaluation.md)。当前项目已经安装了技能，可在任务中显式使用 `$af-product-intelligence`；首批评估对照普通回答与技能回答，原始材料只保存在本地。效果评估形成结论后，才做 [最小原生插件验证](docs/native-plugin-validation.md)。
 
 [首次真实项目材料试跑](docs/evidence/workbench-01-summary.md) 已完成：两组关键建议相近，技能的证据组织更细，但个人使用净收益尚未证明，待用户反馈。
+
+用户新会话体验后的定位反馈已纳入 [0.2 调整](docs/decisions/0003-product-research-positioning.md)：完整研究可包含竞品机制、专业视角分歧、机会方向与图表，不再以最小行动简报作为所有任务的默认输出。旧试跑仅覆盖窄题，不能替代新版效果验收。
 
 仓库身份与名称统一记录于 [manifest.json](manifest.json)。品牌、商标和注册表包名尚未全面核实。下面的安装与更新命令是已有实现的使用说明，不是继续扩展运行时的路线。
 
@@ -49,7 +51,7 @@ macOS/Linux 将 `.venv/Scripts/python.exe` 换成 `.venv/bin/python`。这些平
 # 项目默认 pin；显式改变版本必须同时更新锁，来源必须包含此精确版本
 .venv/Scripts/python.exe -m agentforge update af-product-intelligence --version 0.2.0 --update-lock --apply --project D:/projects/my-product
 
-# 0.2.0 是未来版本示例；当前源只有 0.1.0，执行该示例会明确报版本缺失
+# 当前工作区包含技能/插件 0.2.0；运行时自身仍为 0.1.0
 .venv/Scripts/python.exe -m agentforge update --locked --project D:/projects/my-product
 .venv/Scripts/python.exe -m agentforge doctor --project D:/projects/my-product
 ```

@@ -1,0 +1,50 @@
+test_archive_traversal_links_special_collisions_and_bombs (test_agentforge.ArchiveAndNetworkTests.test_archive_traversal_links_special_collisions_and_bombs) ... ok
+test_hardlink_and_symlink_tree_escape (test_agentforge.ArchiveAndNetworkTests.test_hardlink_and_symlink_tree_escape) ... skipped 'OS does not permit symlink creation'
+test_network_errors_no_sensitive_exception_echo (test_agentforge.ArchiveAndNetworkTests.test_network_errors_no_sensitive_exception_echo) ... ok
+test_remote_catalog_check_does_not_fetch_artifact_and_rejects_source_change (test_agentforge.ArchiveAndNetworkTests.test_remote_catalog_check_does_not_fetch_artifact_and_rejects_source_change) ... ok
+test_explicit_update_and_full_rollback (test_agentforge.RuntimeTests.test_explicit_update_and_full_rollback) ... ok
+test_incompatible_capabilities_runtime_and_platform (test_agentforge.RuntimeTests.test_incompatible_capabilities_runtime_and_platform) ... ok
+test_install_repeat_check_preview_and_locked_update_are_read_only (test_agentforge.RuntimeTests.test_install_repeat_check_preview_and_locked_update_are_read_only) ... ok
+test_local_file_modification_addition_deletion_and_directory_type (test_agentforge.RuntimeTests.test_local_file_modification_addition_deletion_and_directory_type) ... ok
+test_major_and_permission_escalation (test_agentforge.RuntimeTests.test_major_and_permission_escalation) ... ok
+test_shared_plugin_skill_reference_and_conflict (test_agentforge.RuntimeTests.test_shared_plugin_skill_reference_and_conflict) ... ok
+test_source_mutation_integrity_and_missing_lock_version (test_agentforge.RuntimeTests.test_source_mutation_integrity_and_missing_lock_version) ... ok
+test_stable_selection_and_user_scope (test_agentforge.RuntimeTests.test_stable_selection_and_user_scope) ... ok
+test_state_lock_and_schema_tampering (test_agentforge.RuntimeTests.test_state_lock_and_schema_tampering) ... ok
+test_unmanaged_and_global_duplicate_names (test_agentforge.RuntimeTests.test_unmanaged_and_global_duplicate_names) ... ok
+test_dependency_missing_cycle_version_and_duplicate (test_agentforge.SchemaTests.test_dependency_missing_cycle_version_and_duplicate) ... ok
+test_deterministic_export_and_archive (test_agentforge.SchemaTests.test_deterministic_export_and_archive) ... ok
+test_paths_and_resource_links (test_agentforge.SchemaTests.test_paths_and_resource_links) ... ok
+test_schema_meta_and_valid_sources (test_agentforge.SchemaTests.test_schema_meta_and_valid_sources) ... ok
+test_semver_precedence_and_invalid (test_agentforge.SchemaTests.test_semver_precedence_and_invalid) ... ok
+test_unknown_fields_missing_and_empty (test_agentforge.SchemaTests.test_unknown_fields_missing_and_empty) ... ok
+test_abrupt_process_exit_at_every_mutable_phase_and_recover (test_agentforge.TransactionTests.test_abrupt_process_exit_at_every_mutable_phase_and_recover) ... ok
+test_concurrent_writer_refuses_before_switch (test_agentforge.TransactionTests.test_concurrent_writer_refuses_before_switch) ... ok
+test_recovery_live_edits_fail_closed (test_agentforge.TransactionTests.test_recovery_live_edits_fail_closed) ... ok
+test_second_rename_failure_restores_previous_version (test_agentforge.TransactionTests.test_second_rename_failure_restores_previous_version) ... ok
+test_space_and_corrupt_backup_stop_without_changes (test_agentforge.TransactionTests.test_space_and_corrupt_backup_stop_without_changes) ... ok
+test_toctou_live_edit_after_backup_is_preserved (test_agentforge.TransactionTests.test_toctou_live_edit_after_backup_is_preserved) ... ok
+test_build_candidate_is_unpublished_and_never_overwrites (test_boundaries.BoundaryTests.test_build_candidate_is_unpublished_and_never_overwrites) ... ok
+test_catalog_artifact_identity_mismatch_and_digest_mismatch (test_boundaries.BoundaryTests.test_catalog_artifact_identity_mismatch_and_digest_mismatch) ... ok
+test_catalog_semver_channel_duplicate_and_source_revision (test_boundaries.BoundaryTests.test_catalog_semver_channel_duplicate_and_source_revision) ... ok
+test_duplicate_json_keys_and_nonfinite_values (test_boundaries.BoundaryTests.test_duplicate_json_keys_and_nonfinite_values) ... ok
+test_external_edit_during_planning_detected_before_switch (test_boundaries.BoundaryTests.test_external_edit_during_planning_detected_before_switch) ... ok
+test_foreign_journal_target_and_corrupt_backup_rejected (test_boundaries.BoundaryTests.test_foreign_journal_target_and_corrupt_backup_rejected) ... ok
+test_json_output_and_readonly_check_doctor_in_empty_target (test_boundaries.BoundaryTests.test_json_output_and_readonly_check_doctor_in_empty_target) ... ok
+test_multiple_updates_can_be_rolled_back_in_reverse (test_boundaries.BoundaryTests.test_multiple_updates_can_be_rolled_back_in_reverse) ... ok
+test_no_target_no_install_and_cli_errors (test_boundaries.BoundaryTests.test_no_target_no_install_and_cli_errors) ... ok
+test_recovery_itself_can_crash_and_resume (test_boundaries.BoundaryTests.test_recovery_itself_can_crash_and_resume) ... ok
+test_redirect_and_interrupted_response (test_boundaries.BoundaryTests.test_redirect_and_interrupted_response) ... ok
+test_restore_failure_marks_recovery_and_retains_writer (test_boundaries.BoundaryTests.test_restore_failure_marks_recovery_and_retains_writer) ... ok
+test_rollback_older_transaction_requires_reverse_order (test_boundaries.BoundaryTests.test_rollback_older_transaction_requires_reverse_order) ... ok
+test_same_version_source_revision_and_scope_cannot_change (test_boundaries.BoundaryTests.test_same_version_source_revision_and_scope_cannot_change) ... ok
+test_source_identity_replacement_is_not_silently_trusted (test_boundaries.BoundaryTests.test_source_identity_replacement_is_not_silently_trusted) ... ok
+test_stale_plan_after_another_commit (test_boundaries.BoundaryTests.test_stale_plan_after_another_commit) ... ok
+test_unsupported_schema_adapter_hook_and_stable_prerelease (test_boundaries.BoundaryTests.test_unsupported_schema_adapter_hook_and_stable_prerelease) ... ok
+test_windows_junction_rejected_without_touching_target (test_boundaries.BoundaryTests.test_windows_junction_rejected_without_touching_target) ... ok
+test_workspace_same_version_byte_changes_fail_closed (test_boundaries.BoundaryTests.test_workspace_same_version_byte_changes_fail_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 45 tests in 70.687s
+
+OK (skipped=1)
