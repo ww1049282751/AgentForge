@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentforge.local/schemas/channel.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "channel",
+    "releases"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "channel": {
+      "enum": [
+        "stable",
+        "preview"
+      ]
+    },
+    "releases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "id",
+          "version",
+          "channel",
+          "source",
+          "artifact",
+          "publishedAt",
+          "runtimeVersion",
+          "releaseNotes"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "plugin",
+              "skill"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "maxLength": 64
+          },
+          "version": {
+            "type": "string",
+            "minLength": 5
+          },
+          "channel": {
+            "enum": [
+              "stable",
+              "preview"
+            ]
+          },
+          "source": {
+            "$ref": "package.schema.json#/$defs/source"
+          },
+          "artifact": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url",
+              "sha256",
+              "size"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 16777216
+              }
+            }
+          },
+          "publishedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "runtimeVersion": {
+            "type": "string",
+            "minLength": 5
+          },
+          "releaseNotes": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

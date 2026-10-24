@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentforge.local/schemas/skill.schema.json",
+  "$ref": "package.schema.json#/$defs/skill"
+}

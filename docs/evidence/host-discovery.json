@@ -1,0 +1,15 @@
+{
+  "codexVersion": "codex-cli 0.164.0",
+  "discoveryPassed": true,
+  "found": [
+    {
+      "enabled": true,
+      "name": "af-product-intelligence",
+      "pathMatchesExport": true,
+      "scope": "repo"
+    }
+  ],
+  "globalSkillsWritten": false,
+  "method": "skills/list forceReload",
+  "modelInvocation": "not-run"
+}

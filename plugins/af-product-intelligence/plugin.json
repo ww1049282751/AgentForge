@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "kind": "plugin",
+  "id": "af-product-intelligence",
+  "displayName": "AgentForge 产品认知",
+  "description": "基于产品机制、用户问题与专家证据建立可验证的产品认知。",
+  "version": "0.1.0",
+  "channel": "stable",
+  "skills": [{"id": "product-intelligence", "version": "0.1.0", "path": "skills/product-intelligence"}],
+  "dependencies": [],
+  "compatibility": {"runtimeMajor": 0, "platforms": ["windows", "macos", "linux"], "hosts": [{"id": "codex", "adapter": "adapters/codex/adapter.json", "testedVersions": []}], "requiredCapabilities": ["instructions", "local-files"]},
+  "source": {"kind": "workspace", "repository": null, "revision": null, "path": "plugins/af-product-intelligence"},
+  "permissions": {"network": true, "writes": "user-selected-output", "exec": false}
+}

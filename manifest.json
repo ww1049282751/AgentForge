@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "brand": "AgentForge",
+  "repositoryName": "AgentForge",
+  "repository": "https://github.com/ww1049282751/AgentForge",
+  "cliName": "af",
+  "pluginPrefix": "af-",
+  "defaultChannel": "stable",
+  "runtimeVersion": "0.1.0",
+  "supportedSchemaVersions": [1]
+}
