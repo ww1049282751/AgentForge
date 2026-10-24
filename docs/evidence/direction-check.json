@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-24",
+  "scope": "direction and evaluation documentation; runtime and skill source unchanged",
+  "documentation": {
+    "markdownFiles": 25,
+    "localLinks": 34,
+    "syntheticClaimsMapped": 6,
+    "skillScenarios": 10,
+    "semanticOrModelEvaluation": false
+  },
+  "runtimeTestsRerun": false,
+  "reason": "No runtime/schema/adapter/core skill changes",
+  "rawInputsAndOutputsGitIgnored": true,
+  "remotePush": false,
+  "nativePluginExperimentStarted": false
+}

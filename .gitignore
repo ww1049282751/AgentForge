@@ -8,3 +8,4 @@ dist/
 agentforge.lock.json
 *.egg-info/
 build/
+.local/skill-evals/

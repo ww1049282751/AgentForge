@@ -1,5 +1,7 @@
 # 新增或维护技能
 
+当前优先依据真实任务反馈维护技能内容；自建运行时冻结扩展。下面是已有包结构的维护说明，不意味着现在需要增加更多插件、适配器或基础设施。见 [当前路线](implementation-plan.md)。
+
 1. 在 `skills/<id>/` 编写 skill.json、SKILL.md 和必要 references/templates。name 与目录、元数据 ID 一致。核心不硬编码宿主工具、个人路径或账户。
 2. 入口使用两行标量 frontmatter：name、description。本版采用受限、确定性的格式；不支持任意 YAML 或包内脚本。正文按实际触发条件和任务边界编写，引用使用技能内安全相对路径。
 3. 在 `plugins/af-<id>/plugin.json` 组合技能，精确指定版本和路径。直接包含的技能不在 dependencies 重复列出。非直接依赖也只能精确版本，不接受范围。

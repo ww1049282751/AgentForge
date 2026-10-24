@@ -1,8 +1,14 @@
 # AgentForge
 
-集中维护自己的 Agent 技能，并通过显式、可恢复的操作安装和更新。首个能力 **product-intelligence** 用于产品探索、机制比较、专家观点核查与验证实验设计。
+个人使用优先的 Agent 技能库。首个能力 **product-intelligence** 用于产品探索、机制比较、专家观点核查与验证实验设计。当前优先验证它能否改善真实产品判断。
 
-当前版本是本地 MVP 候选。内部插件 `af-product-intelligence` 组合核心技能；Codex 通过生成的独立技能接入。**尚未发布版本，也未验证 Codex 原生插件分发。** 仓库身份与名称统一记录于 [manifest.json](manifest.json)。品牌、商标和注册表包名尚未全面核实。
+**当前阶段：真实任务效果验证。自建运行时冻结扩展，暂不推送或发布。** 已有安装、版本锁和恢复实现保留为备用，不作为本阶段验收中心。已有工程测试不证明技能价值；内部插件格式也不代表 Codex 原生插件已验证。
+
+先读 [当前路线](docs/implementation-plan.md) 与 [真实任务评估方法](docs/skill-evaluation.md)。当前项目已经安装了技能，可在任务中显式使用 `$af-product-intelligence`；首批评估对照普通回答与技能回答，原始材料只保存在本地。效果评估形成结论后，才做 [最小原生插件验证](docs/native-plugin-validation.md)。
+
+[首次真实项目材料试跑](docs/evidence/workbench-01-summary.md) 已完成：两组关键建议相近，技能的证据组织更细，但个人使用净收益尚未证明，待用户反馈。
+
+仓库身份与名称统一记录于 [manifest.json](manifest.json)。品牌、商标和注册表包名尚未全面核实。下面的安装与更新命令是已有实现的使用说明，不是继续扩展运行时的路线。
 
 ## 快速使用
 
