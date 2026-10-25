@@ -1,6 +1,10 @@
 # 实施状态与后续验证
 
-## 当前：统一前缀与技能建设
+## 当前维护：AF Skill Quality Loop
+
+2026-10-25，按本轮要求扩展 [统一评估协议](skill-evaluation.md) 和既有记录模板，统一四类验证、基线与对照、回归、结果状态及安全回滚。三个技能保留专业量表和原场景；继续复用现有 CI，不建设新平台。初始协议实施未同步宿主或推送；用户随后明确授权备份、同步、核对内容和加载后提交推送，已完成本机同步与加载核查。实际检查、远端结果及待验证范围见 [验证报告](validation-report.md)。未启用后台任务；下述前缀迁移授权与执行为此前阶段记录。
+
+## 前一阶段：统一前缀与技能建设
 
 两个作者源迁移为 `skills/af-product-intelligence/` 与 `skills/af-product-deep-dive/`，新增 `skills/af-skill-creator/`。新技能支持必要性判断、Skill Spec 和创建/改进/审查/评估/维护分支；不改写产品研究方法、不强制完整目录树。决定见 [ADR 0007](decisions/0007-af-prefix-and-skill-creator.md)。
 

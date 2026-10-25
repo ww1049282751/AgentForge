@@ -20,11 +20,11 @@ af-product-intelligence 保留问题重构、需求取证、机制迁移和 [分
 
 [真实项目联网对照](docs/evidence/online-ab-20261025-summary.md) 已比较普通组与显式技能组：首轮三个重点维度均相近，没有证明明显净提升；根据观察进一步校准认知增量与现有替代方案的分析。公开资料研究不等于产品实测或真实用户效果验证。
 
-af-skill-creator 在创建前比较复用与更简单的替代；按任务选择工作模式和必要资源，区分结构、行为和真实价值验证。它独立使用，不要求两个产品技能存在，也不负责安装或发布。命名与边界见 [ADR 0007](docs/decisions/0007-af-prefix-and-skill-creator.md)。
+af-skill-creator 在创建前比较复用与更简单的替代；按任务选择工作模式和必要资源，区分结构、行为、对照和真实任务价值验证。它独立使用，不要求两个产品技能存在，也不负责安装或发布。命名与边界见 [ADR 0007](docs/decisions/0007-af-prefix-and-skill-creator.md)。
 
 ## 使用
 
-仓库作者源和本机用户级 `.agents/skills/` 已统一使用 `$af-product-deep-dive`、`$af-product-intelligence` 和 `$af-skill-creator`。2026-10-25 按用户后续明确授权，先备份原副本及仓库改动，再迁移/安装；三个副本共 54 个文件，清单与 SHA-256 均匹配作者源。同版宿主加载器在项目及用户目录均识别三个新名、显示启用且无错误；桌面 UI 刷新和自动触发未实测。详见 [使用说明](docs/usage.md) 和 [本轮验证](docs/validation-report.md)。
+仓库作者源和本机用户级 `.agents/skills/` 已统一使用 `$af-product-deep-dive`、`$af-product-intelligence` 和 `$af-skill-creator`。2026-10-25，按质量闭环后续同步授权，备份并保护本地内容后更新 5 个技能文件；三个完整副本共 54 个文件，清单与 SHA-256 均匹配本轮作者源，64 条内部链接有效。同版宿主加载器在项目和用户目录均识别三个技能、显示启用且无错误；桌面 UI/当前会话刷新和自动触发未实测。详见 [使用说明](docs/usage.md) 和 [验证记录](docs/validation-report.md)。
 
 在支持读取指令文件的助手中，明确指定本仓库所选技能的 `SKILL.md`，同时说明任务和已有材料。例如：“使用 `skills/af-product-deep-dive/SKILL.md`，研究这个项目从任务提交到失败恢复的调用链，区分源码结论和实际验证。”
 
@@ -51,6 +51,8 @@ tests/                 检查器回归与技能专属材料检查
 
 ## 维护与检查
 
+[AF Skill Quality Loop](docs/skill-evaluation.md) 是全仓库统一评估协议：从具体问题与假设出发，冻结基线后定向修改，执行对照与回归，再决定保留、继续修改、回滚或待验证。各技能保留专业量表；结构、行为、对照和真实价值分别判定，修改或分数提高不能代替价值证据。改进记录模板复用同一文档，不新增评估平台。
+
 所有新技能必须使用 `af-` 前缀，frontmatter 的 `name` 与目录名完全一致。新增或改进技能见 [编写说明](docs/authoring.md)，实际使用反馈见 [评估方法](docs/skill-evaluation.md)。运行轻量检查：
 
 ```powershell
@@ -64,6 +66,6 @@ python -m unittest discover -s tests -v
 
 ## 当前状态
 
-仓库已按 [个人技能集合决定](docs/decisions/0004-personal-skill-collection.md) 移除安装器体系，保留技能、研究材料和历史证据。本次统一两个作者源的 af- 命名并新增 af-skill-creator，按后续授权完成宿主副本迁移/安装，仓库提交推送结果见验证记录。旧技能副本、安装器的本地状态与构建产物保留在忽略的备份中。
+仓库已按 [个人技能集合决定](docs/decisions/0004-personal-skill-collection.md) 移除安装器体系，保留技能、研究材料和历史证据。af- 命名与此前宿主迁移记录保留；本轮完善统一质量闭环，实际检查及未执行项见验证记录，未证明三个技能的行为或真实价值已经改善。旧技能副本、安装器的本地状态与构建产物保留在忽略的备份中。
 
 [维护规则](AGENTS.md) · [当前路线](docs/implementation-plan.md) · [验证记录](docs/validation-report.md)
