@@ -27,6 +27,7 @@
 | af-product-deep-dive | 技术准确性、源码证据、机制分析、架构判断、结论可验证性 | [场景说明](../skills/af-product-deep-dive/evals/README.md)、[量表](../skills/af-product-deep-dive/evals/rubric.md) |
 | af-skill-creator | 技能创建必要性、能力复用、改进有效性、原有能力保留、权限边界 | [场景说明及观察重点](../skills/af-skill-creator/evals/README.md)、[场景观察标准](../skills/af-skill-creator/evals/scenarios.json) |
 | af-architecture-design | 约束追踪、候选权衡、模块与接口、可靠性、兼容演进、复杂度与验证诚实 | [场景说明](../skills/af-architecture-design/evals/README.md)、[架构量表](../skills/af-architecture-design/evals/rubric.md) |
+| af-ui-design | 任务与信息架构、视觉、交互、项目继承、可实现性、证据及负担；硬失败独立判定 | [场景说明](../skills/af-ui-design/evals/README.md)、[UI 量表](../skills/af-ui-design/evals/rubric.md) |
 
 技能创建器已有逐场景 `expected` 和观察重点，足以承担专业审查，不为了统一形式再造评分文件。技能目录复制后须独立可用：各 `evals/README.md` 以仓库根路径说明本协议的使用条件，不增加指向技能目录外的必需资源链接；离开 AgentForge 时沿用目标项目规范与技能内执行说明。
 

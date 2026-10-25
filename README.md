@@ -10,6 +10,7 @@
 | af-product-deep-dive | 具体产品深度剖析、工作流与机制还原、源码和架构追踪、设计取舍及候选模式提取 | [SKILL.md](skills/af-product-deep-dive/SKILL.md) |
 | af-skill-creator | 技能化必要性判断、Skill Spec、创建、改进、审查、评估与维护 | [SKILL.md](skills/af-skill-creator/SKILL.md) |
 | af-architecture-design | 软件架构设计、评审、技术选型、关键流程细化、兼容演进与验证计划 | [SKILL.md](skills/af-architecture-design/SKILL.md) |
+| af-ui-design | 产品界面设计、改进与评审，涵盖视觉、交互状态、项目继承和实际观察 | [SKILL.md](skills/af-ui-design/SKILL.md) |
 
 研究“这个产品如何工作、实现和取舍”优先选 af-product-deep-dive；研究“需求机会、方向或哪个方案适合我”优先选 af-product-intelligence。两者独立可用，混合任务复用有来源与边界的研究成果，不自动跨技能调度。职责依据见 [ADR 0006](docs/decisions/0006-product-deep-dive.md)。
 
@@ -24,6 +25,8 @@ af-product-intelligence 保留问题重构、需求取证、机制迁移和 [分
 af-skill-creator 在创建前比较复用与更简单的替代；按任务选择工作模式和必要资源，区分结构、行为、对照和真实任务价值验证。它独立使用，不要求两个产品技能存在，也不负责安装或发布。命名与边界见 [ADR 0007](docs/decisions/0007-af-prefix-and-skill-creator.md)。
 
 ## 使用
+
+af-ui-design 将既定任务与工程约束转为界面和交互，按 design / improve / review 工作；不接管方向研究、后端架构或技能建设。已有设计系统优先继承，小问题直接回答。2026-10-25 后续明确授权后，已备份并安装到用户级 `.agents/skills/af-ui-design/`：14 个文件及散列一致、8 条内部链接有效，同版加载器识别启用且无错误；桌面 UI/当前会话刷新与自动触发未实测。可用 `$af-ui-design`，也可显式读取作者源，例如“读取 `skills/af-ui-design/SKILL.md`，只评审这张截图，区分可见问题与待验证行为”。职责见 [ADR 0009](docs/decisions/0009-ui-design.md)，结构、模型试跑、对照与真实价值分别见 [实施报告](docs/evidence/ui-design-20261025-summary.md)，安装不改变行为效果的结论。
 
 af-architecture-design 面向正向设计：把业务约束落到模块、接口、数据所有权、异常路径与可验证决策。按任务选择 design、review、selection、deep-design、evolution、validation；简单问题直接回答。它与产品方向研究、现有机制逆向及技能建设各自独立，不自动跨技能调用。职责取舍见 [ADR 0008](docs/decisions/0008-architecture-design.md)，实际验收范围见 [试跑摘要](skills/af-architecture-design/evals/results-20261025.md)。后续明确授权后，已备份并安装到用户级 `.agents/skills/af-architecture-design/`：18 个文件及散列一致、14 条内部链接有效，同版加载器在项目和用户目录均识别启用且无错误。可使用 `$af-architecture-design`；桌面 UI/当前会话刷新与自动触发未实测。以下三个技能的历史使用副本记录保留原范围。
 
