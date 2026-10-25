@@ -3,7 +3,7 @@
 - 当前定位是供维护者个人使用的多个技能集合。以用户的真实任务和反馈改进技能；不建设安装器、插件分发、适配器、版本求解或自动更新系统。此规则取代此前“保留运行时备用”和“后续原生插件验证”的路线，依据见 docs/decisions/0004-personal-skill-collection.md。
 - skills/<name>/ 是唯一编写源，每个技能以 SKILL.md 为入口。参考材料、模板、样例与行为评估按需放在对应技能下；不要为新技能建立占位目录或强制完整目录树。
 - 技能应保持宿主独立，具体工具选择由任务环境决定。已复制到项目或用户技能目录的内容是使用副本，不作为另一份编写源；不自动覆盖、安装或删除这些副本。
-- 当前个人使用入口统一为 product-intelligence；本机用户级目录存放完整使用副本，旧项目级 af-product-intelligence 别名已归入本地备份。今后仍只修改 skills 下的作者源；同步使用副本需有任务授权并先保护目标改动，不创建自动同步器。技能内部资源引用应在复制整个文件夹后仍然可用。
+- 本机用户级目录已安装 product-intelligence 与 product-deep-dive，旧项目级 af-product-intelligence 别名已归入本地备份。具体产品机制与源码研究优先用 product-deep-dive，方向/需求/方案选择优先用 product-intelligence；见 docs/decisions/0006-product-deep-dive.md。今后仍只修改 skills 下的作者源；同步使用副本需有任务授权并先保护目标改动，不创建自动同步器。技能内部资源引用应在复制整个文件夹后仍然可用。
 - SKILL.md 使用标准 frontmatter 的 name 和 description。name 与目录名一致且不重名；为便于轻量检查，两项使用非空单行文本。不要新增自定义 skill.json、plugin.json 或发布版本锁。
 - 以 Git 历史和必要的内容散列定位技能快照；保留历史研究中的旧版本号，但不继续维护每个技能的包版本和发布渠道。
 - 真实任务输入、未经编辑的输出及其他私有材料放在 .local/skill-evals/，备份放在 .local/backups/；整个 .local/ 被忽略。仓库只保存脱敏研究结论和明确标注的合成案例。

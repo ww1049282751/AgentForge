@@ -2,9 +2,24 @@
 
 仓库中的 `skills/<name>/SKILL.md` 是唯一编写源。选择技能后，在支持读取本地指令文件的助手中明确指定入口，并提供真实任务、已有材料和必要约束。助手是否实际读取和遵循文件，需要根据执行记录与产出判断。
 
-本机个人入口统一为 `$product-intelligence`。例如：“使用 $product-intelligence，帮我探索产品方向。先理解问题，再研究不同机制和竞品启发。”也可以直接指定仓库内的 SKILL.md 路径。
+本机已有入口为 `$product-intelligence` 与 `$product-deep-dive`。例如：“使用 $product-intelligence，帮我探索产品方向。先理解问题，再研究不同机制和竞品启发。”研究具体产品或源码时选择 `$product-deep-dive`，也可以直接指定仓库内的 SKILL.md 路径。
 
 2026-10-25 分层研究修改完成后，用户另行授权同步本机使用副本并提交推送。现有用户级副本已备份并更新，22 个文件与作者源的清单和 SHA-256 一致；也可明确指定 `skills/product-intelligence/SKILL.md` 使用作者源。
+
+上述一致性是此前同步时的状态。新增 product-deep-dive 及两个技能职责说明最初仅修改作者源；用户随后明确授权全局安装、同步、提交推送。已在保护现有改动并核验备份后，将新技能安装至用户级 `.agents/skills/product-deep-dive/`，并同步 `.agents/skills/product-intelligence/`。两个目录各 22 个文件，均与当前作者源逐文件散列一致。
+
+用户级目录适用于各仓库；Codex 会自动检测技能变化，未显示时可重启，依据 [官方技能说明](https://learn.chatgpt.com/docs/build-skills)。本次核对了文件与资源完整性，尚未实际验证当前会话刷新或自动触发；文件一致不等于这些行为已经通过。
+
+## 选择研究入口
+
+| 当前目的 | 使用入口 |
+| --- | --- |
+| 产品如何工作、业务状态与源码实现、架构取舍 | [product-deep-dive](../skills/product-deep-dive/SKILL.md) |
+| 产品方向、需求机会、竞品启发、方案选择 | [product-intelligence](../skills/product-intelligence/SKILL.md) |
+
+新技能可直接指定作者源：“使用 `skills/product-deep-dive/SKILL.md`，分析给定仓库的任务执行与恢复机制，提供文件/符号依据，环境允许时做局部验证。”仅有官网材料时可说：“依据这些页面还原主要工作流，区分来源说法与推断，不猜内部实现。”
+
+它会按请求选择快速扫描、深度剖析、技术逆向或专项研究。无需先选模板；默认会话交付，只有已授权保存才写文件。混合任务先建立可追溯的产品理解，再供方向或决策研究复用，不会自动调用其他技能或建设知识库。
 
 ## 按任务使用研究能力
 
