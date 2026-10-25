@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | product-intelligence | 产品方向探索、需求挖掘、竞品与机制分析、专业视角评审和认知补齐 | [SKILL.md](skills/product-intelligence/SKILL.md) |
 
-当前产品研究技能已补充问题解释对照、需求取证、竞品机制迁移、差异化发散及 [分析正反例](skills/product-intelligence/references/analysis-examples.md)。这些方法尚未证明能在所有真实任务中稳定增加价值。
+当前产品研究技能保留一个入口，按任务选择深度与参考资源。已有问题重构、需求取证、机制迁移和 [分析正反例](skills/product-intelligence/references/analysis-examples.md)，新增 [最强替代方案验证](skills/product-intelligence/references/strongest-alternative.md) 与 [认知增量和反证](skills/product-intelligence/references/learning-and-challenge.md)：沿同一任务检验替代，以真实输入为基准追踪证据、判断与选择变化。简单问题直接回答，复杂研究允许回退；这些方法尚未证明稳定增加真实使用价值。
 
 [此前的行为试跑](docs/evidence/behavior-round-20261025-summary.md) 实际执行合成离线任务并据此修正研究范围偏移；该轮未覆盖联网竞品研究、真实用户收益或自动触发。
 
@@ -16,7 +16,7 @@
 
 ## 使用
 
-本机个人使用统一选择 `$product-intelligence`。用户级目录已同步完整技能，旧的项目级 `$af-product-intelligence` 别名已备份并退出使用目录。
+本机个人使用统一选择 `$product-intelligence`。2026-10-25 按用户后续授权，分层研究修改已同步到用户级完整使用副本，22 个文件与作者源的清单和 SHA-256 一致；同步前已备份旧副本与仓库未提交改动。旧的项目级 `$af-product-intelligence` 别名仍保留在备份中。
 
 在其他支持读取指令文件的助手中，可以明确指定本仓库的 `skills/product-intelligence/SKILL.md`，同时说明任务和已有材料。
 

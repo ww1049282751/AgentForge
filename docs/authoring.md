@@ -10,6 +10,8 @@ frontmatter 至少包含 `name` 与 `description`，两项使用非空单行文�
 
 既有 product-intelligence 的分析正反例属于方法说明，保留在 references 中；完整合成研究演示放在 examples 中。位置服从实际用途，不要求每种材料机械归类。
 
+分层以职责为界：入口决定任务、深度、资源和停止条件；参考文档维护详细方法；模板帮助交付与核查。每项参考资源应说明何时读取，避免入口和模块复制整套步骤。product-intelligence 的具体取舍见 [ADR 0005](decisions/0005-layered-product-research.md)。其他技能可复用渐进加载、证据边界和失败记录原则，不套用产品研究流程或强制三层目录。
+
 ## 维护过程
 
 1. 从真实任务或明确反馈确认要改善的行为，保留用户已有约束。
@@ -28,5 +30,7 @@ frontmatter 至少包含 `name` 与 `description`，两项使用非空单行文�
 示例文件可以独立存在，不因文件名要求配套账本或报告。产品研究的 C 编号映射由 tests/test_product_intelligence.py 单独检查，不作为其他技能的格式要求。
 
 evals/scenarios.json 是可选项，场景数量不固定；每项包含 id、request、shouldTrigger 和 expected，有原始输入时增加 inputFiles（相对 evals 目录，目标须在当前技能内）。执行者只接收请求、原始材料和适用技能，审查者随后读取 expected，不把期望答案预先交给执行者。定义完整和路径存在不等于行为已通过。
+
+多轮行为场景可以使用 followup 与 followupExpected；后者仅供后续审查。通用检查器不验证这些技能专属观察的完整性或语义，也不因此增加统一评估协议。
 
 技能文件夹应能完整复制使用；内部资源链接留在技能目录内，作者仓库的维护文档在 docs 单独链接技能。当前结构示范见 [产品研究技能](../skills/product-intelligence/SKILL.md)。
