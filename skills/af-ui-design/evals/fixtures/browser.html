@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>合成练习：资料核对列表</title>
+<style>
+:root { color-scheme: light; --ink:#172734; --muted:#536775; --line:#c9d5da; --accent:#205f70; }
+* { box-sizing:border-box; }
+body { margin:0; font:16px/1.6 system-ui,sans-serif; color:var(--ink); background:#f2f5f5; }
+main { margin:32px auto; padding:24px; width:960px; min-width:840px; background:white; border:1px solid var(--line); }
+h1 { margin:0 0 8px; font-size:26px; }
+p { margin:8px 0; color:var(--muted); }
+.tools { display:flex; gap:12px; align-items:center; margin:24px 0; }
+input { padding:10px; font:inherit; border:1px solid var(--line); }
+button { padding:10px 16px; font:inherit; color:white; background:var(--accent); border:0; cursor:pointer; }
+button:focus, input:focus { outline:none; }
+.row { display:flex; align-items:center; justify-content:space-between; gap:20px; border-top:1px solid var(--line); padding:18px 0; }
+.title { white-space:nowrap; }
+.tag { color:var(--accent); white-space:nowrap; }
+</style>
+<main>
+  <p>合成测试材料 · 不连接真实业务</p>
+  <h1>资料核对</h1>
+  <p>查看待核对资料，筛选后打开详情。所有内容均为虚构。</p>
+  <div class="tools"><label for="query">标题</label><input id="query" placeholder="输入关键词"><button id="filter">筛选</button></div>
+  <section id="list" aria-label="资料列表"></section>
+  <p id="message" role="status"></p>
+  <dialog id="detail"><h2>资料详情</h2><p id="detailText"></p><button id="close">关闭</button></dialog>
+</main>
+<script>
+const titles=['季度中文资料整理与跨项目重复记录核对——等待维护者确认外部引用','附件索引补充与归档'];
+const list=document.querySelector('#list'), message=document.querySelector('#message'), dialog=document.querySelector('#detail');
+function render(){
+  const shown=titles.filter(t=>t.includes(document.querySelector('#query').value));
+  list.replaceChildren(); message.textContent=shown.length?'':'暂无资料';
+  for(const title of shown){
+    const row=document.createElement('div');row.className='row';
+    const text=document.createElement('span');text.className='title';text.textContent=title;
+    const tag=document.createElement('span');tag.className='tag';tag.textContent='待核对';
+    const button=document.createElement('button');button.textContent='详情';
+    button.onclick=()=>{document.querySelector('#detailText').textContent=title;dialog.showModal()};
+    row.append(text,tag,button);list.append(row);
+  }
+}
+document.querySelector('#filter').onclick=render;
+document.querySelector('#close').onclick=()=>dialog.close();
+render();
+</script>
+</html>
