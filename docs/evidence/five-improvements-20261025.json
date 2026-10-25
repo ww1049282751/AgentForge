@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-25",
+  "scope": "Unified personal skill entry, synchronized authorized copy, corrected document checker, retained tests in CI, enriched behavioral scenarios",
+  "entry": {
+    "name": "product-intelligence",
+    "authorSource": "skills/product-intelligence",
+    "userCopyFiles": 18,
+    "exactFileAndSha256Match": true,
+    "oldProjectAliasRemovedFromDiscoveryDirectory": true,
+    "oldCopiesPreservedAndVerified": true,
+    "automaticSyncAdded": false
+  },
+  "checks": {
+    "unitTestsPassed": 26,
+    "unitTestsFailed": 0,
+    "standardLibraryOnly": true,
+    "genericExamplesAreNotForcedIntoResearchFormat": true,
+    "productExampleEvidenceMappingCheckedSeparately": true,
+    "skillInternalResourcePortabilityChecked": true,
+    "skillCreatorFormatCheckPassed": true,
+    "gitDiffWhitespaceCheckPassed": true
+  },
+  "behavioralDefinitions": {
+    "scenarios": 18,
+    "scenariosWithExplicitInputFiles": 12,
+    "negativeScenarios": 3,
+    "newSyntheticInputDocuments": 4,
+    "newScenarioModelRunsCompleted": 0
+  },
+  "documentationCheck": {
+    "skills": 1,
+    "markdownFiles": 33,
+    "localLinks": 57,
+    "skillScenarios": 18,
+    "semanticOrModelEvaluation": false
+  },
+  "privateEvidence": ".local/skill-evals/five-improvements-20261025/",
+  "limitations": {
+    "hostReloadVerified": false,
+    "automaticRoutingVerified": false,
+    "realTaskEfficacyVerified": false,
+    "githubActionsExecutedRemotely": false,
+    "completeCommonMarkOrYamlValidation": false,
+    "remotePushOrPublication": false
+  }
+}

@@ -1,11 +1,11 @@
+.local/
+.agents/
+.agentforge/
+agentforge.lock.json
 .venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 dist/
-.agentforge/
-.agents/
-agentforge.lock.json
-*.egg-info/
 build/
-.local/skill-evals/
+*.egg-info/

@@ -1,7 +1,0 @@
-{
-  "schemaVersion": 1,
-  "host": "codex",
-  "namePrefix": "af-",
-  "discoveryPath": ".agents/skills",
-  "capabilities": ["instructions", "local-files"]
-}

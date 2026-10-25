@@ -1,5 +1,7 @@
 # ADR 0001：Python 单运行时与可恢复文件事务
 
+历史记录：自 2026-10-25 起由 [ADR 0004](0004-personal-skill-collection.md) 替代，以下为当时的技术选择，不再是当前仓库的维护要求。
+
 日期：2026-10-24。状态：采用。
 
 空仓库没有既有技术栈。本机 Python 3.12.10、Node 24.19.0、Git、GitHub CLI 和 Codex CLI 0.164.0 可用；af 命令未发现冲突。选择 Python 3.12+ 标准库处理 CLI、JSON、ZIP、HTTPS、散列和文件事务，避免两套运行时。

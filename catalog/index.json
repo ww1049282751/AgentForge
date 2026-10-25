@@ -1,8 +1,0 @@
-{
-  "schemaVersion": 1,
-  "packages": [
-    {"kind": "plugin", "id": "af-product-intelligence", "metadata": "plugins/af-product-intelligence/plugin.json"},
-    {"kind": "skill", "id": "product-intelligence", "metadata": "skills/product-intelligence/skill.json"}
-  ],
-  "channels": {"stable": "catalog/channels/stable.json", "preview": "catalog/channels/preview.json"}
-}

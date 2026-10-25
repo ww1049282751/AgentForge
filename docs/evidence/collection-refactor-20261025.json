@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-25",
+  "scope": "Personal skill collection restructuring; installer retired, skill instructions and research retained",
+  "environment": "Windows, Python 3.12.10, standard library only",
+  "backup": {
+    "privateLocation": ".local/backups/",
+    "snapshotFiles": 1629,
+    "zipAndSha256Verified": true,
+    "uncommittedChangesIncluded": true,
+    "recursiveDeleteBlockedByPolicy": true,
+    "completedMethod": "Move retired files into an ignored local backup without deleting content"
+  },
+  "preservation": {
+    "coreSkillFilesUnchanged": 8,
+    "movedExamplesAndScenariosUnchanged": 4,
+    "historicalEvidenceFilesUnchanged": 8,
+    "projectSkillFilesUnchanged": 8,
+    "userSkillFilesUnchanged": 8,
+    "rubricAndHistoricalReportVerifiedAgainstDocumentedEdits": true,
+    "retiredPathsAbsentFromActiveTree": 27,
+    "retiredFilesVerifiedInBackup": 1582,
+    "rawResearchMaterials": "Retained in .local/skill-evals; not moved or removed"
+  },
+  "targetedCheckerTests": {
+    "passed": 12,
+    "failed": 0,
+    "temporaryFixturesOnly": true,
+    "logLocation": ".local/skill-evals/collection-refactor-20261025/checker-tests.txt"
+  },
+  "documentationCheck": {
+    "skills": 1,
+    "markdownFiles": 28,
+    "localLinks": 54,
+    "syntheticClaimsMapped": 6,
+    "skillScenarios": 10,
+    "semanticOrModelEvaluation": false
+  },
+  "gitDiffWhitespaceCheckPassed": true,
+  "privateFilesIgnored": true,
+  "limits": {
+    "semanticOrModelEvaluation": false,
+    "newRealTaskEfficacyTest": false,
+    "hostDiscoveryRetested": false,
+    "githubActionsRun": false,
+    "crossPlatformRun": false,
+    "remotePushOrPublication": false,
+    "externalSkillCopiesUpdated": false
+  }
+}
