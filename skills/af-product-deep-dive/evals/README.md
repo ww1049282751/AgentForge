@@ -1,4 +1,4 @@
-# product-deep-dive 行为评估
+# af-product-deep-dive 行为评估
 
 [场景定义](scenarios.json) 至少覆盖源码 Agent、仅页面 SaaS、基础设施、双产品机制比较与证据不足，并有方向选择/普通修复负例。所有 fixtures 都是明确标注的合成输入，正例可离线运行；存在文件或通过静态检查不表示模型行为通过。
 

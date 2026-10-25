@@ -133,6 +133,7 @@ def check_repo(root):
         name = values["name"]
         require(re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", name) and len(name) <= 64,
                 f"Invalid skill name: {name}")
+        require(name.startswith("af-"), f"Skill name must use af- prefix: {name}")
         require(name not in names, f"Duplicate skill name: {name}")
         require(name == skill.name, f"Skill name differs from directory: {skill.name}")
         names.add(name)

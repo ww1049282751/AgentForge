@@ -8,24 +8,24 @@
 
 | 文件 | 职责 |
 | --- | --- |
-| [SKILL.md](../../skills/product-deep-dive/SKILL.md) | 四种研究模式、资源选择、证据边界、交付与停止 |
-| [research-protocol.md](../../skills/product-deep-dive/references/research-protocol.md) | 研究范围、问题/假设、区分证据、优先级、回退和停止 |
-| [product-models.md](../../skills/product-deep-dive/references/product-models.md) | 用户任务、核心对象、业务状态和可观察交互 |
-| [source-code-analysis.md](../../skills/product-deep-dive/references/source-code-analysis.md) | 入口、调用链、数据与控制流、架构取舍、错误和恢复、局部实验 |
-| [evidence-and-validation.md](../../skills/product-deep-dive/references/evidence-and-validation.md) | E1–E5、引用与版本、冲突来源、实测和推断边界 |
-| [design-pattern-extraction.md](../../skills/product-deep-dive/references/design-pattern-extraction.md) | 从机制提炼候选模式、条件、代价、反例和授权保存 |
-| [product-overview.md](../../skills/product-deep-dive/templates/product-overview.md) | 快速扫描的可选输出提示 |
-| [deep-dive-report.md](../../skills/product-deep-dive/templates/deep-dive-report.md) | 产品、业务、体验与实现的按需报告模块 |
-| [architecture-report.md](../../skills/product-deep-dive/templates/architecture-report.md) | 技术链路、验证范围与设计取舍 |
-| [evidence-ledger.md](../../skills/product-deep-dive/templates/evidence-ledger.md) | 重要主张与具体来源、范围、冲突及待验事项 |
-| [design-pattern.md](../../skills/product-deep-dive/templates/design-pattern.md) | 候选模式的来源、机制、条件、失败与修订记录 |
-| [agent-platform-analysis.md](../../skills/product-deep-dive/examples/agent-platform-analysis.md) | 明确标记的合成方法示范，不是试跑结果 |
-| [evals/README.md](../../skills/product-deep-dive/evals/README.md)、[scenarios.json](../../skills/product-deep-dive/evals/scenarios.json)、[rubric.md](../../skills/product-deep-dive/evals/rubric.md) | 执行隔离、七个场景和事后 0–2 分量表 |
-| [relay-agent/README.md](../../skills/product-deep-dive/evals/fixtures/relay-agent/README.md)、[runner.py](../../skills/product-deep-dive/evals/fixtures/relay-agent/runner.py)、[test_runner.py](../../skills/product-deep-dive/evals/fixtures/relay-agent/test_runner.py) | 合成 Agent 原始说明、可执行源码与已有局部测试 |
-| [canvas-desk-pages.md](../../skills/product-deep-dive/evals/fixtures/canvas-desk-pages.md) | 仅页面的合成 SaaS 输入，含权限冲突和材料指令 |
-| [stream-ledger.md](../../skills/product-deep-dive/evals/fixtures/stream-ledger.md) | 合成基础设施接口、数据流与恢复线索 |
-| [approval-products.md](../../skills/product-deep-dive/evals/fixtures/approval-products.md) | 两种审批机制的合成比较输入 |
-| [nova-loop.md](../../skills/product-deep-dive/evals/fixtures/nova-loop.md) | 无源码、无可核查原文的薄弱线索 |
+| [SKILL.md](../../skills/af-product-deep-dive/SKILL.md) | 四种研究模式、资源选择、证据边界、交付与停止 |
+| [research-protocol.md](../../skills/af-product-deep-dive/references/research-protocol.md) | 研究范围、问题/假设、区分证据、优先级、回退和停止 |
+| [product-models.md](../../skills/af-product-deep-dive/references/product-models.md) | 用户任务、核心对象、业务状态和可观察交互 |
+| [source-code-analysis.md](../../skills/af-product-deep-dive/references/source-code-analysis.md) | 入口、调用链、数据与控制流、架构取舍、错误和恢复、局部实验 |
+| [evidence-and-validation.md](../../skills/af-product-deep-dive/references/evidence-and-validation.md) | E1–E5、引用与版本、冲突来源、实测和推断边界 |
+| [design-pattern-extraction.md](../../skills/af-product-deep-dive/references/design-pattern-extraction.md) | 从机制提炼候选模式、条件、代价、反例和授权保存 |
+| [product-overview.md](../../skills/af-product-deep-dive/templates/product-overview.md) | 快速扫描的可选输出提示 |
+| [deep-dive-report.md](../../skills/af-product-deep-dive/templates/deep-dive-report.md) | 产品、业务、体验与实现的按需报告模块 |
+| [architecture-report.md](../../skills/af-product-deep-dive/templates/architecture-report.md) | 技术链路、验证范围与设计取舍 |
+| [evidence-ledger.md](../../skills/af-product-deep-dive/templates/evidence-ledger.md) | 重要主张与具体来源、范围、冲突及待验事项 |
+| [design-pattern.md](../../skills/af-product-deep-dive/templates/design-pattern.md) | 候选模式的来源、机制、条件、失败与修订记录 |
+| [agent-platform-analysis.md](../../skills/af-product-deep-dive/examples/agent-platform-analysis.md) | 明确标记的合成方法示范，不是试跑结果 |
+| [evals/README.md](../../skills/af-product-deep-dive/evals/README.md)、[scenarios.json](../../skills/af-product-deep-dive/evals/scenarios.json)、[rubric.md](../../skills/af-product-deep-dive/evals/rubric.md) | 执行隔离、七个场景和事后 0–2 分量表 |
+| [relay-agent/README.md](../../skills/af-product-deep-dive/evals/fixtures/relay-agent/README.md)、[runner.py](../../skills/af-product-deep-dive/evals/fixtures/relay-agent/runner.py)、[test_runner.py](../../skills/af-product-deep-dive/evals/fixtures/relay-agent/test_runner.py) | 合成 Agent 原始说明、可执行源码与已有局部测试 |
+| [canvas-desk-pages.md](../../skills/af-product-deep-dive/evals/fixtures/canvas-desk-pages.md) | 仅页面的合成 SaaS 输入，含权限冲突和材料指令 |
+| [stream-ledger.md](../../skills/af-product-deep-dive/evals/fixtures/stream-ledger.md) | 合成基础设施接口、数据流与恢复线索 |
+| [approval-products.md](../../skills/af-product-deep-dive/evals/fixtures/approval-products.md) | 两种审批机制的合成比较输入 |
+| [nova-loop.md](../../skills/af-product-deep-dive/evals/fixtures/nova-loop.md) | 无源码、无可核查原文的薄弱线索 |
 
 另外新增 [专属材料测试](../../tests/test_product_deep_dive.py) 与 [ADR 0006](../decisions/0006-product-deep-dive.md)。测试检查完整技能复制后的资源可用性和执行输入不含评分/示范答案，不判断模型研究质量。
 

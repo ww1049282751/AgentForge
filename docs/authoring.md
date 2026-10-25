@@ -4,21 +4,27 @@
 
 ## 入口与资源
 
-frontmatter 至少包含 `name` 与 `description`，两项使用非空单行文本，name 使用小写字母、数字和短横线，与目录名一致且不重名。description 说明技能的实际能力和适用任务；只有在容易误触发时才补充排除范围。
+frontmatter 至少包含 `name` 与 `description`，两项使用非空单行文本。所有新技能的 name 和目录名必须完全一致、以 `af-` 开头且不重名；使用小写字母、数字和短横线，整体不超过 64 字符，短横线之间不得为空。description 说明技能的实际能力和适用任务；只有在容易误触发时才补充排除范围。现有迁移映射与边界见 [ADR 0007](decisions/0007-af-prefix-and-skill-creator.md)。
 
 主入口保留目的、关键行为、边界以及相关资源链接。详细方法放入 references，输出模板放入 templates，示例放入 examples，行为场景和评分依据放入 evals。可选脚本仅在解决具体重复任务时增加，说明自己的使用方法及依赖；不为集合建立统一运行时。
 
-既有 product-intelligence 的分析正反例属于方法说明，保留在 references 中；完整合成研究演示放在 examples 中。位置服从实际用途，不要求每种材料机械归类。
+既有 af-product-intelligence 的分析正反例属于方法说明，保留在 references 中；完整合成研究演示放在 examples 中。位置服从实际用途，不要求每种材料机械归类。
 
-分层以职责为界：入口决定任务、深度、资源和停止条件；参考文档维护详细方法；模板帮助交付与核查。每项参考资源应说明何时读取，避免入口和模块复制整套步骤。product-intelligence 的具体取舍见 [ADR 0005](decisions/0005-layered-product-research.md)。其他技能可复用渐进加载、证据边界和失败记录原则，不套用产品研究流程或强制三层目录。
+分层以职责为界：入口决定任务、深度、资源和停止条件；参考文档维护详细方法；模板帮助交付与核查。每项参考资源应说明何时读取，避免入口和模块复制整套步骤。af-product-intelligence 的具体取舍见 [ADR 0005](decisions/0005-layered-product-research.md)。其他技能可复用渐进加载、证据边界和失败记录原则，不套用产品研究流程或强制三层目录。
 
 ## 维护过程
+
+创建前先判断任务是否重复、方法是否稳定、现有技能能否覆盖、一次性提示/文档/小脚本是否更简单，以及维护成本是否合理。没有独立缺口时优先复用或局部改进，不为了“创建技能”堆砌目录。
+
+创建或显著改变职责时用轻量 Skill Spec 设计 Goal、Scope、Trigger、Inputs、Outputs、Workflow、Resources、Constraints、Evaluation、Maintenance，见 [可选规格模板](../skills/af-skill-creator/templates/skill-spec.md)。它可以只存在于会话，不是必须长期维护的配置。局部修复只需记录缺陷、改动与验证，不强制全部阶段；只要方案时不写文件。
+
+[af-skill-creator](../skills/af-skill-creator/SKILL.md) 支持创建、改进、审查、评估和维护，按意图选择分支，不规定所有技能采用其流程。它独立可用；产品方向和具体产品机制仍由两个产品技能各自负责。
 
 1. 从真实任务或明确反馈确认要改善的行为，保留用户已有约束。
 2. 修改技能唯一编写源和必要资源；不同时编写项目或用户目录中的副本。
 3. 核对引用、方法与示例是否一致，保留事实、推断和假设边界。示例若为合成，明确标记。
 4. 运行 `python scripts/check_docs.py`；改动脚本或行为场景时另运行 `python -m unittest discover -s tests -v`，相关回归保留在 tests 并由 CI 执行。
-5. 影响研究行为时选择有代表性的场景或真实任务验证，按 [评估方法](skill-evaluation.md) 记录实际结果与限制。场景定义存在不等于测试通过。
+5. 影响技能行为时选择有代表性的场景或真实任务验证，按 [评估方法](skill-evaluation.md) 分开记录结构、行为和实际价值。场景定义存在不等于测试通过，未执行项标为待验证。
 6. 同步技能目录、相关文档与 [验证记录](validation-report.md)。重要取舍记录到 decisions，不为每次措辞修改新增决策文件。
 
 内容快照使用 Git 提交或本地冻结文件的散列定位。历史记录中的 0.1、0.2 等版本保留其原意；当前不需要 skill.json、plugin.json、发布渠道或包版本同步。
@@ -33,4 +39,4 @@ evals/scenarios.json 是可选项，场景数量不固定；每项包含 id、re
 
 多轮行为场景可以使用 followup 与 followupExpected；后者仅供后续审查。通用检查器不验证这些技能专属观察的完整性或语义，也不因此增加统一评估协议。
 
-技能文件夹应能完整复制使用；内部资源链接留在技能目录内，作者仓库的维护文档在 docs 单独链接技能。当前结构示范见 [产品研究技能](../skills/product-intelligence/SKILL.md)。
+技能文件夹应能完整复制使用；内部资源链接留在技能目录内，作者仓库的维护文档在 docs 单独链接技能。当前结构示范见 [产品研究技能](../skills/af-product-intelligence/SKILL.md)。

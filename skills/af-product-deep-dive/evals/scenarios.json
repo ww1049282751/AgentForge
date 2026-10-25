@@ -68,7 +68,7 @@
       "id": "direction-choice-negative",
       "request": "我想探索给独立设计师做什么产品，比较需求机会、现有替代和我该选的方向。还没有指定研究对象。",
       "shouldTrigger": false,
-      "expected": ["优先方向探索能力，如可用的 product-intelligence；不把单个系统技术逆向作为必经流程"]
+      "expected": ["优先方向探索能力，如可用的 af-product-intelligence；不把单个系统技术逆向作为必经流程"]
     },
     {
       "id": "code-fix-negative",

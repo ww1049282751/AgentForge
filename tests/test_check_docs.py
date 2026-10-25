@@ -20,7 +20,7 @@ class CollectionChecks(unittest.TestCase):
         self.root.mkdir()
         for name in ('README.md', 'AGENTS.md', 'CHANGELOG.md'):
             (self.root / name).write_text('# Notes\n', encoding='utf-8')
-        self.skill = self.add_skill('example-skill')
+        self.skill = self.add_skill('af-example-skill')
 
     def add_skill(self, name):
         folder = self.root / 'skills' / name
@@ -44,7 +44,7 @@ class CollectionChecks(unittest.TestCase):
         self.assertEqual((result['skills'], result['skillScenarios']), (1, 0))
 
     def test_multiple_skills_without_registry(self):
-        self.add_skill('another-skill')
+        self.add_skill('af-another-skill')
         self.assertEqual(checker.check_repo(self.root)['skills'], 2)
 
     def test_missing_entry_is_rejected(self):
@@ -54,7 +54,7 @@ class CollectionChecks(unittest.TestCase):
 
     def test_name_mismatch_is_rejected(self):
         path = self.skill / 'SKILL.md'
-        path.write_text(path.read_text().replace('name: example-skill', 'name: other'), encoding='utf-8')
+        path.write_text(path.read_text().replace('name: af-example-skill', 'name: af-other'), encoding='utf-8')
         with self.assertRaisesRegex(ValueError, 'differs from directory'):
             checker.check_repo(self.root)
 
@@ -62,6 +62,32 @@ class CollectionChecks(unittest.TestCase):
         path = self.skill / 'SKILL.md'
         path.write_text(path.read_text().replace('A specific reusable task', ''), encoding='utf-8')
         with self.assertRaisesRegex(ValueError, 'description must be'):
+            checker.check_repo(self.root)
+
+    def test_unprefixed_skill_is_rejected(self):
+        self.add_skill('legacy-skill')
+        with self.assertRaisesRegex(ValueError, 'must use af- prefix'):
+            checker.check_repo(self.root)
+
+    def test_invalid_prefixed_names_are_rejected(self):
+        entry = self.skill / 'SKILL.md'
+        original = entry.read_text(encoding='utf-8')
+        for name in ('af-', 'af--example', 'af-Example', 'af_example', 'af-' + 'x' * 62):
+            with self.subTest(name=name):
+                entry.write_text(original.replace('name: af-example-skill', f'name: {name}'), encoding='utf-8')
+                with self.assertRaisesRegex(ValueError, 'Invalid skill name'):
+                    checker.check_repo(self.root)
+
+    def test_duplicate_names_are_rejected_before_directory_mismatch(self):
+        entry = self.add_skill('af-z-copy') / 'SKILL.md'
+        entry.write_text(entry.read_text(encoding='utf-8').replace('name: af-z-copy', 'name: af-example-skill'), encoding='utf-8')
+        with self.assertRaisesRegex(ValueError, 'Duplicate skill name'):
+            checker.check_repo(self.root)
+
+    def test_prefixed_name_requires_matching_directory(self):
+        entry = self.add_skill('legacy-folder') / 'SKILL.md'
+        entry.write_text(entry.read_text(encoding='utf-8').replace('name: legacy-folder', 'name: af-renamed'), encoding='utf-8')
+        with self.assertRaisesRegex(ValueError, 'differs from directory'):
             checker.check_repo(self.root)
 
     def test_missing_file_link_is_rejected(self):

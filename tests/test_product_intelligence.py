@@ -13,7 +13,7 @@ spec.loader.exec_module(links)
 
 class ProductIntelligenceExamples(unittest.TestCase):
     def test_skill_local_resources_are_portable(self):
-        skill = (ROOT / 'skills/product-intelligence').resolve()
+        skill = (ROOT / 'skills/af-product-intelligence').resolve()
         for document in skill.rglob('*.md'):
             for link in links.markdown_destinations(document.read_text(encoding='utf-8')):
                 parsed = urlsplit(link)
@@ -25,7 +25,7 @@ class ProductIntelligenceExamples(unittest.TestCase):
                     self.assertTrue(target.exists(), 'Skill resource is missing')
 
     def test_example_claims_map_to_the_ledger(self):
-        folder = ROOT / 'skills/product-intelligence/examples'
+        folder = ROOT / 'skills/af-product-intelligence/examples'
         ledger = (folder / 'evidence-ledger.md').read_text(encoding='utf-8')
         brief = (folder / 'decision-brief.md').read_text(encoding='utf-8')
         claims = re.findall(r'^\| (C\d+) \|', ledger, re.M)

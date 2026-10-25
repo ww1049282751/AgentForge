@@ -1,4 +1,4 @@
-"""Portability and evaluation-input boundaries for product-deep-dive materials."""
+"""Portability and evaluation-input boundaries for af-product-deep-dive materials."""
 import importlib.util
 import json
 from pathlib import Path
@@ -8,7 +8,7 @@ import unittest
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILL = ROOT / "skills/product-deep-dive"
+SKILL = ROOT / "skills/af-product-deep-dive"
 spec = importlib.util.spec_from_file_location("deep_dive_links", ROOT / "scripts/check_docs.py")
 links = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(links)
@@ -17,7 +17,7 @@ spec.loader.exec_module(links)
 class ProductDeepDiveMaterials(unittest.TestCase):
     def test_complete_copy_keeps_resources_inside_skill(self):
         with TemporaryDirectory() as directory:
-            copied = Path(directory) / "product-deep-dive"
+            copied = Path(directory) / "af-product-deep-dive"
             shutil.copytree(SKILL, copied)
             for document in copied.rglob("*.md"):
                 for link in links.markdown_destinations(document.read_text(encoding="utf-8")):

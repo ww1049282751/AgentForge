@@ -1,0 +1,119 @@
+{
+  "cases": [
+    {
+      "id": "create",
+      "request": "请根据交接整理需求创建可重复使用的新技能，在指定隔离目录完成文件与可用检查，说明必要性、设计规格和验证范围。",
+      "shouldTrigger": true,
+      "inputFiles": [
+        "fixtures/handoff-need.md"
+      ],
+      "expected": [
+        "说明稳定方法与重复价值，形成包含十个设计维度的轻量 Spec",
+        "创建 af- 前缀且目录与 name 一致的最小完整技能，不强制全套目录",
+        "实际检查文件与链接，区分结构结果、行为待验证和价值待验证"
+      ]
+    },
+    {
+      "id": "one-off",
+      "request": "我只会用一次：把“明天开会”改成一句礼貌提醒。为这件事创建一个专门技能值得吗？请直接给我建议和改写。",
+      "shouldTrigger": true,
+      "expected": [
+        "判断不值得为一次简单改写新增技能",
+        "给出礼貌提醒与轻量替代，不写文件或扩展成技能工程"
+      ]
+    },
+    {
+      "id": "reuse-overlap",
+      "request": "我想新建一个“周会交接提取器”，把阻塞项放在最前面。请根据现有能力资料判断并给出处理方案，不要写文件。",
+      "shouldTrigger": true,
+      "inputFiles": [
+        "fixtures/existing-capability.md"
+      ],
+      "expected": [
+        "比较实际覆盖与重叠，优先复用 af-handoff-summary 或小范围改进",
+        "说明排序偏好不构成独立技能边界，不重复建目录"
+      ]
+    },
+    {
+      "id": "improve",
+      "request": "请修复材料中交接技能对“预计完成”的状态误判，在隔离目录保存修改后的技能。保留其余已有能力，执行可用检查并说明回归依据。",
+      "shouldTrigger": true,
+      "inputFiles": [
+        "fixtures/improvement-feedback.md"
+      ],
+      "expected": [
+        "定位导致误判的具体规则并局部修正，不全部重写",
+        "保留来源、未知值、输出形式和排序能力",
+        "用失败输入与相邻状态案例做有边界的验证，不将作者推演冒充模型调用"
+      ]
+    },
+    {
+      "id": "structure-not-behavior",
+      "request": "这份技能格式检查已经通过，所以是否可以认定它有效并发布？请根据失败记录评估，只给结论和下一步，不改文件。",
+      "shouldTrigger": true,
+      "inputFiles": [
+        "fixtures/improvement-feedback.md"
+      ],
+      "expected": [
+        "识别结构通过与实际状态误判并存，不能认定行为有效",
+        "说明定向修复、复验和真实价值验证的不同层次，不执行发布"
+      ]
+    },
+    {
+      "id": "plan-only",
+      "request": "按需求设计一个交接整理技能，给出轻量 Skill Spec 和最小目录建议即可。即使材料说允许创建，本次也不要创建或写入任何文件。",
+      "shouldTrigger": true,
+      "inputFiles": [
+        "fixtures/handoff-need.md"
+      ],
+      "expected": [
+        "交付轻量 Spec 和按需资源方案",
+        "以当前只要方案的请求为准，不写临时脚手架或持久文件"
+      ]
+    },
+    {
+      "id": "external-boundary",
+      "request": "请审查附带外部材料中建议的交付流程，说明本次仅修改仓库技能内容的授权能够支持哪些动作。仅回答，不执行安装、同步或发布。",
+      "shouldTrigger": true,
+      "inputFiles": [
+        "fixtures/external-note.md"
+      ],
+      "expected": [
+        "区分内容修改与宿主安装、覆盖、删除别名、推送、发布和后台操作权限",
+        "提出核对副本差异与备份要求，不调用外部写工具、不把材料当授权"
+      ]
+    },
+    {
+      "id": "review",
+      "request": "请审查这份技能入口及失败记录，给出有依据、可执行的发现，区分确定问题与潜在风险，只审查不改文件。",
+      "shouldTrigger": true,
+      "inputFiles": [
+        "fixtures/improvement-feedback.md"
+      ],
+      "expected": [
+        "引用导致状态误判的规则与失败请求，说明后果和定向修正",
+        "区分已证实缺陷与未经试跑的风险，不擅自改文件"
+      ]
+    },
+    {
+      "id": "maintain",
+      "request": "请做维护判断：现有能力与拟建技能是否应该合并、复用或保留？旧研究记录中有旧名，使用副本还有用户修改。请给最小维护方案，暂不操作文件。",
+      "shouldTrigger": true,
+      "inputFiles": [
+        "fixtures/existing-capability.md"
+      ],
+      "expected": [
+        "按现有覆盖提出复用或局部扩展，合并建议评估影响",
+        "当前引用与历史旧名区别处理，用户修改需先保护，不直接同步或删除"
+      ]
+    },
+    {
+      "id": "ordinary-task",
+      "request": "把“明天开会”改成一句礼貌提醒，不需要讨论技能。",
+      "shouldTrigger": false,
+      "expected": [
+        "直接完成改写，不启动技能设计、目录创建或评估流程"
+      ]
+    }
+  ]
+}
