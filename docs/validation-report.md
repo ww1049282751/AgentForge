@@ -10,7 +10,9 @@
 
 已安装用户级 `.agents/skills/product-deep-dive/`，并更新 `.agents/skills/product-intelligence/` 的入口职责说明；其余匹配文件保留。两个使用副本各 22 个文件，清单和 SHA-256 均与作者源一致，旧副本备份完整。没有在另一全局目录重复安装，没有修改宿主配置、创建同步服务或启用后台任务。未实际验证会话刷新、自动触发或真实任务收益。
 
-本轮文档检查覆盖 2 个技能、62 份 Markdown、159 条本地链接及 28 个场景；28 项单元测试通过，两个已安装副本的 skill-creator 格式检查通过。推送前获取远端，`origin/main` 与基线 `eb807ec` 一致。远端实绩在完成后追加；以下新增技能阶段的未安装、未推送记录保留其历史含义。
+本轮文档检查覆盖 2 个技能、62 份 Markdown、159 条本地链接及 28 个场景；28 项单元测试通过，两个已安装副本的 skill-creator 格式检查及 `git diff --check` 通过。推送前获取远端，`origin/main` 与基线 `eb807ec` 一致。
+
+主变更提交 `8a74820dc884e7f6184958955a0260caf8c9392e` 已普通快进推送到 `origin/main`，远端散列核对一致。[本次 GitHub Actions](https://github.com/ww1049282751/AgentForge/actions/runs/40159176280) 已完成且成功，文档检查及单元测试步骤均通过。本段实绩追加到后续文档提交；以下新增技能阶段的未安装、未推送记录保留其历史含义。同步原始记录及校验结果位于忽略目录 `.local/skill-evals/product-skills-sync-20261025/`。
 
 ## 最新维护：product-deep-dive 独立技能
 
