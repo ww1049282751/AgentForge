@@ -9,12 +9,17 @@
 | 产品如何工作、业务状态与源码实现、架构取舍 | [af-product-deep-dive](../skills/af-product-deep-dive/SKILL.md) |
 | 产品方向、需求机会、竞品启发、方案选择 | [af-product-intelligence](../skills/af-product-intelligence/SKILL.md) |
 | 技能必要性判断、设计、创建、改进、审查、评估与维护 | [af-skill-creator](../skills/af-skill-creator/SKILL.md) |
+| 新系统架构、现有方案评审、技术选型、流程细化与兼容迁移 | [af-architecture-design](../skills/af-architecture-design/SKILL.md) |
 
 可直接指定作者源：“使用 `skills/af-product-deep-dive/SKILL.md`，分析给定仓库的任务执行与恢复机制，提供文件/符号依据，环境允许时做局部验证。”仅有官网材料时要求区分来源说法与推断，不猜内部实现。
 
 技能建设可说：“使用 `skills/af-skill-creator/SKILL.md`，根据这些重复任务判断是否值得技能化；若值得，在本仓库创建最小完整技能并验证。”只要方案则明确不写文件；已有明确创建授权时不要求额外重复审批。
 
 ## 按任务使用
+
+架构任务可说：“使用 `skills/af-architecture-design/SKILL.md`，根据已有需求、技术栈与团队约束，比较可行方案并细化模块、接口、失败恢复和验收任务。”也可只评审一条链路或一个技术决定，无需先填写模式表单。选择已有产品/方向与研究已有实现仍分别由产品技能负责；新技能不替代代码实现或生产运维。
+
+af-architecture-design 初始阶段只在作者源实现。2026-10-25 用户随后明确授权备份、安装、核对加载并提交推送：现已完整安装到用户级 `.agents/skills/af-architecture-design/`，18 个文件清单与 SHA-256 一致、14 条内部链接有效。当前桌面同版加载器在项目和用户目录均返回 user、enabled=true、无错误；可使用 `$af-architecture-design`。桌面 UI/当前会话刷新和自动触发未实测，仍可通过上述作者源路径显式读取。下文三个既有技能的历史同步记录保留原范围。
 
 产品研究可以直接问局部机制或条件比较，无需每次填写简报。具体产品研究按请求选择快速扫描、深度剖析、技术逆向或专项研究；方向研究围绕真实需求、最强替代和认知增量。复杂任务提供当前目的、已有认识和材料，关键歧义才澄清。
 
