@@ -26,6 +26,14 @@ af-skill-creator 在创建前比较复用与更简单的替代；按任务选择
 
 ## 使用
 
+AF Next 第一阶段保持五个技能和独立入口，通过 [能力分流](docs/authoring.md)、[按需证据交接](docs/usage.md) 与 [既有质量协议](docs/skill-evaluation.md) 改进维护判断。治理取舍见 [ADR 0010](docs/decisions/0010-af-next-governance.md)，本轮实施、实际评估与未验证项见 [阶段证据](docs/evidence/af-next-phase1-summary.md)；文档治理完成不表示技能净收益已证明。
+
+[Phase 2 对照与准入](docs/evidence/af-next-phase2-summary.md) 保留普通 Agent、既有技能及短提示的实际比较：本轮没有 trial-ready 候选，未增加技能；真实用户收益仍待验证。
+[Phase 3 准入复核](docs/evidence/af-next-phase3-summary.md) 因证据不足而选择零试制，保留简单替代和重新准入条件，不建立占位技能。
+[Phase 4 恢复对照](docs/evidence/af-next-phase4-summary.md) 在离线副本实际复现并修复状态重放，两种交接核心结果相同；保留知识失效与测试边界，不宣称真实用户或多 Agent 效率收益。
+
+2026-10-26 经后续明确授权完成 [AF Next 用户副本同步](docs/evidence/af-next-sync-20261026-summary.md)：五个技能的 86 个文件与作者源一致，同版宿主加载器识别通过；现有桌面会话刷新与自动触发未实测。
+
 af-ui-design 将既定任务与工程约束转为界面和交互，按 design / improve / review 工作；不接管方向研究、后端架构或技能建设。已有设计系统优先继承，小问题直接回答。2026-10-25 后续明确授权后，已备份并安装到用户级 `.agents/skills/af-ui-design/`：14 个文件及散列一致、8 条内部链接有效，同版加载器识别启用且无错误；桌面 UI/当前会话刷新与自动触发未实测。可用 `$af-ui-design`，也可显式读取作者源，例如“读取 `skills/af-ui-design/SKILL.md`，只评审这张截图，区分可见问题与待验证行为”。职责见 [ADR 0009](docs/decisions/0009-ui-design.md)，结构、模型试跑、对照与真实价值分别见 [实施报告](docs/evidence/ui-design-20261025-summary.md)，安装不改变行为效果的结论。
 
 af-architecture-design 面向正向设计：把业务约束落到模块、接口、数据所有权、异常路径与可验证决策。按任务选择 design、review、selection、deep-design、evolution、validation；简单问题直接回答。它与产品方向研究、现有机制逆向及技能建设各自独立，不自动跨技能调用。职责取舍见 [ADR 0008](docs/decisions/0008-architecture-design.md)，实际验收范围见 [试跑摘要](skills/af-architecture-design/evals/results-20261025.md)。后续明确授权后，已备份并安装到用户级 `.agents/skills/af-architecture-design/`：18 个文件及散列一致、14 条内部链接有效，同版加载器在项目和用户目录均识别启用且无错误。可使用 `$af-architecture-design`；桌面 UI/当前会话刷新与自动触发未实测。以下三个技能的历史使用副本记录保留原范围。
